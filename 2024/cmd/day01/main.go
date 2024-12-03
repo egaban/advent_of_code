@@ -19,7 +19,7 @@ func intFrequency(ints []int) map[int]int {
 }
 
 func main() {
-	lines, err := common.ReadInput("day01/input.txt")
+	lines, err := common.ReadInputLines("day01/input.txt")
 
 	if err != nil {
 		fmt.Println(err)

@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func ReadInput(inputpath string) ([]string, error) {
+func ReadInputLines(inputpath string) ([]string, error) {
 	fullpath := filepath.Join("inputs/", inputpath)
 	file, err := os.Open(fullpath)
 
@@ -31,6 +31,15 @@ func ReadInput(inputpath string) ([]string, error) {
 	}
 
 	return lines, nil
+}
+
+func ReadInput(inputpath string) (string, error) {
+	fullpath := filepath.Join("inputs", inputpath)
+	content, err := os.ReadFile(fullpath)
+	if err != nil {
+		return "", err
+	}
+	return string(content), nil
 }
 
 func StringToInts(s string) []int {
