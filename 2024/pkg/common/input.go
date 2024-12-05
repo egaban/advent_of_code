@@ -2,11 +2,8 @@ package common
 
 import (
 	"bufio"
-	"log"
 	"os"
 	"path/filepath"
-	"strconv"
-	"strings"
 )
 
 func ReadInputLines(inputpath string) ([]string, error) {
@@ -40,20 +37,4 @@ func ReadInput(inputpath string) (string, error) {
 		return "", err
 	}
 	return string(content), nil
-}
-
-func StringToInts(s string) []int {
-	fields := strings.Fields(s)
-
-	nums := make([]int, 0, len(fields))
-
-	for _, field := range fields {
-		if num, err := strconv.Atoi(field); err == nil {
-			nums = append(nums, num)
-		} else {
-			log.Fatalf("Failed to parse integer %s", field)
-		}
-	}
-
-	return nums
 }
