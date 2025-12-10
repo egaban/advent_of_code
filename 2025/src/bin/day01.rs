@@ -57,7 +57,7 @@ fn part2(lines: &Vec<String>) -> u32 {
 }
 
 fn main() {
-    let input = aoc::read_input("inputs/2025/01.txt");
+    let input = aoc::read_input_lines("inputs/01.txt");
 
     println!("Part 1 = {}", part1(&input));
     println!("Part 2 = {}", part2(&input));
